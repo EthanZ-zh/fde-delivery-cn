@@ -4,6 +4,23 @@
 
 例如，联调通过时，交付记录会写明验证的是哪个版本、在哪个环境、证据在哪里，并单独记录生产发布和客户签收状态。
 
+## 用两个会话续接交付台账
+
+这个案例使用合成的企业知识库试点材料。先把 [起始台账](examples/knowledge-base/ledger-before.md) 和同目录的 `evidence/` 复制到一个工作目录，保留相对位置。将台账副本作为两次会话共同的交付记录。
+
+```powershell
+$ledgerDemo = Join-Path '.demo-output' "kb-$(Get-Date -Format 'yyyyMMdd-HHmmss-fff')"
+New-Item -ItemType Directory -Path $ledgerDemo
+Copy-Item examples/knowledge-base/ledger-before.md (Join-Path $ledgerDemo 'ledger.md')
+Copy-Item examples/knowledge-base/evidence $ledgerDemo -Recurse
+```
+
+1. **第一次会话**。使用 `$fde-delivery-cn`，提供台账副本、`KB-E01.md` 和 `KB-E02.md`，请 Codex 将检索联调和权限抽查的结果更新到台账副本。生产仍待排期，业务仍待签收。
+2. **新会话**。提供更新后的同一份台账和 `KB-E03.md`，请 Codex 继续更新。两份报告对同一员工、查询和批次的权限结论相反。预期把权限事项标为待复核，保留两份证据，并明确由客户 IT 查日志和复测。
+3. **再次提交同一证据**。请 Codex 重新处理 `KB-E03.md`。台账的事项和更新记录应保持原样。
+
+见[回归用例](evals/ledger-cases.md)和[更新后的台账示例](examples/knowledge-base/ledger-after.md)。Skill 在工具可读写时更新指定台账；如果环境仅能读取材料，可让它输出拟修改内容。
+
 ## 运行工单演示
 
 需要 Python 3.10+。演示用固定规则和合成工单模拟建议、人工确认与异常转人工，可离线运行。

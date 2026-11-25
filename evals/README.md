@@ -23,4 +23,5 @@ python -X utf8 -c "import pathlib, subprocess; subprocess.run(['codex.exe', 'exe
 
 ## 结果
 
-见[首版评测记录](results.md)。
+- [v0.1 行为评测](results.md)记录原有五个工单交付场景的对照结果。
+- [v0.2 台账回归用例](ledger-cases.md)使用合成知识库材料，覆盖新证据、跨会话冲突、重复提交、证据缺失和同批次不同权限。 [实测记录](ledger-results.md)
