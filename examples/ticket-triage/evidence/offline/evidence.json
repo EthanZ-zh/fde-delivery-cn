@@ -1,0 +1,15 @@
+{
+  "simulated": true,
+  "scenario": "offline",
+  "ticket_id": "DEMO-1042",
+  "requested_decision": "approve",
+  "suggested_queue": null,
+  "final_queue": null,
+  "status": "manual_review",
+  "reason_code": "simulated_model_unavailable",
+  "reason": "建议服务模拟离线，保留原人工处理路径。",
+  "events": [
+    "model_unavailable",
+    "manual_review"
+  ]
+}

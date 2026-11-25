@@ -1,0 +1,16 @@
+{
+  "simulated": true,
+  "scenario": "normal",
+  "ticket_id": "DEMO-1042",
+  "requested_decision": "approve",
+  "suggested_queue": "IT 支持",
+  "final_queue": "IT 支持",
+  "status": "routed",
+  "reason_code": "operator_approved",
+  "reason": "网络故障命中固定规则，模拟主管确认后分流。",
+  "events": [
+    "suggested",
+    "approved",
+    "routed"
+  ]
+}

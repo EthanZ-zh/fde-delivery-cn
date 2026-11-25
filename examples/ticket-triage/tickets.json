@@ -1,0 +1,12 @@
+{
+  "normal": {
+    "id": "DEMO-1042",
+    "category": "network",
+    "subject": "仓库终端无法连接办公网"
+  },
+  "unknown": {
+    "id": "DEMO-1043",
+    "category": "other",
+    "subject": "请求协助核实未分类业务事项"
+  }
+}
